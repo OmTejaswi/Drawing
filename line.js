@@ -13,6 +13,7 @@ class shape {
     }
     display(){
         stroke(this.color);
+        fill(this.color);
         strokeWeight(this.size);
         if(this.shape === "Line") {
             line(this.px,this.py,this.cx,this.cy);
@@ -35,9 +36,10 @@ class shape {
             noStroke();
             push();
             translate(this.cx,this.cy);
+            rotate(-60);
             beginShape();
             for(let i =0; i < 360; i+=120) {
-                    var x,y;
+                    let x,y;
                     x = this.size*sin(i)*10;
                     y = this.size*cos(i)*10;
 
